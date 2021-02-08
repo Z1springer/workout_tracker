@@ -1,0 +1,24 @@
+{
+  "name": "workout_tracker",
+  "version": "1.0.0",
+  "description": "Modified: No starter code, tutors have the overly complex code, beware",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Z1springer/workout_tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Z1springer/workout_tracker/issues"
+  },
+  "homepage": "https://github.com/Z1springer/workout_tracker#readme",
+  "dependencies": {
+    "express-handlebars": "^5.2.0"
+  }
+}
