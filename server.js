@@ -19,6 +19,44 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
   useNewUrlParser: true,
 });
 
+app.get("/", (req, res) => {
+  res.sendFile("./index.html");
+});
+
+//SEED DATA==============================================================
+
+const seedExorcises = [
+  {
+    name: "Push-ups",
+    type: "Upper-body",
+    weight: "N/A",
+    sets: 5,
+    reps: 10,
+    duration: "20 min",
+    isCardio: false,
+  },
+  {
+    name: "Mountain Climbers",
+    type: "Lower-body",
+    weight: "N/A",
+    sets: 3,
+    reps: 20,
+    duration: "15 min",
+    isCardio: false,
+  },
+  {
+    name: "Jogging",
+    type: "Cardio",
+    weight: "N/A",
+    sets: "N/A",
+    reps: "10 Laps",
+    duration: "30 min",
+    isCardio: true,
+  },
+];
+
+// ======================================================================
+
 app.get("/workouts", (req, res) => {
   db.Workout.find({})
     .then((dbExercise) => {
@@ -41,7 +79,8 @@ app.post("/api/workout", ({ body }, res) => {
 });
 
 //creates an exercise FOR a workout
-app.post("/submit", ({ body }, res) => {
+app.post("/submit", (req, res) => {
+  console.log(req.body, "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
   db.Exercise.create(body)
     .then(({ _id }) =>
       db.Workout.findOneAndUpdate({}, { $push: { weight: _id } }, { new: true })

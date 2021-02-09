@@ -60,25 +60,25 @@ You are required to submit the following:
 
 ### Notes from Zac's Demo
 
-- creates new repo, called mongoose meal planner _X_
+- creates new repo, called mongoose meal planner `X`
 
-- used express, compression, morgan, and mongoose _X_
+- used express, compression, morgan, and mongoose `X`
 
-- created two models, Meal.js(Meal model) and Week.js(Week model) and an index.js(requiring and exporting Meal and Week) _X_
+- created two models, Meal.js(Meal model) and Week.js(Week model) and an index.js(requiring and exporting Meal and Week) `X`
 
-- require mongoose and set Schema variable for each model _X_
+- require mongoose and set Schema variable for each model `X`
 
-- Meal had name, servings, isTasty, isHotDog, and spicyLevel
+- Meal had name, servings, isTasty, isHotDog, and spicyLevel `X`
 
-- Week had name, array of meals (meals:[{type:Schema.Types.ObjectId, ref: 'Meal'}])
+- Week had name, array of meals (meals:[{type:Schema.Types.ObjectId, ref: 'Meal'}]) `X`
 
-- in server created const db = require("./models")
+- in server created const db = require("./models") `X`
 
 - in server, created const seedMeals for all the meals being put into the db with the parameters set above
 
 - for each week (meals: [result[Math.floor(Math.random * result.length)].\_id])
 
-- created connection to mongo server, in server (const mongoose = require('mongoose') & mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mealplanner"))
+- created connection to mongo server, in server (const mongoose = require('mongoose') & mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mealplanner")) `X`
 
 - in server app.get('/api/meals', (req,res)=>{db.Meal.find({}).then(dbMeals=>{res.json(dbMeals)})}) sameish for weeks
 
