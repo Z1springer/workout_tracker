@@ -2,26 +2,31 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8" />
-    <title>NoteTaker</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Populate Exercise</title>
+    <style>
+      input {
+        display: block;
+        height: 36px;
+        width: 200px;
+        font-size: 24px;
+      }
+      textarea {
+        width: 200px;
+        height: 200px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Mongo Note App</h1>
-    <div id="user-input">
-      <p>Title</p>
-      <input type="text" id="title" />
-      <br />
-      <p>Note</p>
-      <textarea id="note"></textarea>
-      <div id="buttons">
-        <div id="action-button">
-          <button id="make-new">Submit</button>
-        </div>
-        <button id="clear-all">Delete All Notes</button>
-      </div>
-    </div>
+    <form action="/submit" method="post">
+      <h1>Hi User!</h1>
+      <h2>Enter a Note!</h2>
+      <input type="text" name="title" placeholder="Title" />
+      <textarea type="text" name="body">Write Note Here</textarea>
 
-    <div id="results"></div>
-    <script src="app.js"></script>
+      <input type="submit" />
+      <a href="/Exercises">See your Exercises!</a>
+      <a href="/Workout">See your profile!</a>
+      <!-- <a href="/populateduser">See your profile, populated with notes!</a> -->
+    </form>
   </body>
 </html>
