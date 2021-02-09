@@ -57,3 +57,43 @@ You are required to submit the following:
 - The URL to the deployed application
 
 - The URL to the GitHub repository
+
+### Notes from Zac's Demo
+
+- creates new repo, called mongoose_meal planner
+
+- used express, compression, morgan, and mongoose
+
+- created two models, Meal.js(Meal model) and Week.js(Week model) and an index.js(requiring and exporting Meal and Week)
+
+- require mongoose and set Schema variable for each model
+
+- Meal had name, servings, isTasty, isHotDog, and spicyLevel
+
+- Week had name, array of meals (meals:[{type:Schema.Types.ObjectId, ref: 'Meal'}])
+
+- in server created const db = require("./models")
+
+- in server, created const seedMeals for all the meals being put into the db with the parameters set above
+
+- for each week (meals: [result[Math.floor(Math.random * result.length)].\_id])
+
+- created connection to mongo server, in server (const mongoose = require('mongoose') & mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mealplanner"))
+
+- in server app.get('/api/meals', (req,res)=>{db.Meal.find({}).then(dbMeals=>{res.json(dbMeals)})}) sameish for weeks
+
+- created /populatedmeals route(app.get... (req,res)=>{db.Weeks.find({}).populate('meals')})
+
+- tied in jquery and grabbed local script in the html and added a quick h1 for testing
+
+- replaced in the '/' route res.send to res.sendFile('/index.html')
+
+- then does an ajax request with the fron end script (function renderMealPlans(){$.ajax({url:"/populatedmeals",method:"GET"}).then(dbData=>{console.timeLog(dbData)})}renderMealplans())
+
+- added to the .then(dbData) created a div in for each new object ($("<div>",{can add styling with this argument})) and set each one to a variable
+
+- for each item in the list array it creates a new element
+
+- when directly styling an element in the html make sure to separate out each style with a semi-colon
+
+- deployment instructions are all in the class repo, read them closely
