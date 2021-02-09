@@ -17,6 +17,8 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
   useNewUrlParser: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true,
 });
 
 app.get("/", (req, res) => {
@@ -57,10 +59,11 @@ const seedExorcises = [
 
 // ======================================================================
 
+//view workouts
 app.get("/workouts", (req, res) => {
   db.Workout.find({})
-    .then((dbExercise) => {
-      res.json(dbExercise);
+    .then((viewWO) => {
+      res.json(viewWO);
     })
     .catch((err) => {
       res.json(err);
@@ -70,8 +73,8 @@ app.get("/workouts", (req, res) => {
 //create workout
 app.post("/api/workout", ({ body }, res) => {
   db.Workout.create(body)
-    .then((dbExercise) => {
-      console.log(dbExercise);
+    .then((createWO) => {
+      console.log(createWO);
     })
     .catch(({ message }) => {
       console.log(message);
@@ -80,19 +83,23 @@ app.post("/api/workout", ({ body }, res) => {
 
 //creates an exercise FOR a workout
 app.post("/submit", (req, res) => {
-  console.log(req.body, "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-  db.Exercise.create(body)
-    .then(({ _id }) =>
-      db.Workout.findOneAndUpdate({}, { $push: { weight: _id } }, { new: true })
-    )
-    .then((dbExercise) => {
-      res.json(dbExercise);
+  db.Exercise.create(req.body)
+    .then(({ _id }) => {
+      db.Workout.findByIdAndUpdate(req.body.id, {
+        $push: { exercise: _id },
+      }).then((updtWO) => {
+        console.log(updtWO);
+        res.json(updtWO);
+      });
     })
     .catch((err) => {
-      res.json(err);
+      console.log(err);
+      res.status(404);
     });
 });
+
 //=============================================================================
+
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
