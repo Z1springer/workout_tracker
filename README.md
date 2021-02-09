@@ -60,9 +60,9 @@ You are required to submit the following:
 
 ### Notes from Zac's Demo
 
-- creates new repo, called mongoose_meal planner
+- creates new repo, called mongoose*meal planner \_X*
 
-- used express, compression, morgan, and mongoose
+- used express, compression, morgan, and mongoose _X_
 
 - created two models, Meal.js(Meal model) and Week.js(Week model) and an index.js(requiring and exporting Meal and Week)
 

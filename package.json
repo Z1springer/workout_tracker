@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "Modified: No starter code, tutors have the overly complex code, beware",
   "main": "server.js",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.15",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -17,10 +24,5 @@
   "bugs": {
     "url": "https://github.com/Z1springer/workout_tracker/issues"
   },
-  "homepage": "https://github.com/Z1springer/workout_tracker#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "express-handlebars": "^5.2.0",
-    "handlebars": "^4.7.6"
-  }
+  "homepage": "https://github.com/Z1springer/workout_tracker#readme"
 }
