@@ -60,13 +60,13 @@ You are required to submit the following:
 
 ### Notes from Zac's Demo
 
-- creates new repo, called mongoose*meal planner \_X*
+- creates new repo, called mongoose meal planner _X_
 
 - used express, compression, morgan, and mongoose _X_
 
-- created two models, Meal.js(Meal model) and Week.js(Week model) and an index.js(requiring and exporting Meal and Week)
+- created two models, Meal.js(Meal model) and Week.js(Week model) and an index.js(requiring and exporting Meal and Week) _X_
 
-- require mongoose and set Schema variable for each model
+- require mongoose and set Schema variable for each model _X_
 
 - Meal had name, servings, isTasty, isHotDog, and spicyLevel
 

@@ -1,25 +1,3 @@
-// var express = require("express");
-
-// var app = express();
-// var PORT = process.env.PORT || 8080;
-
-// var db = require("./models");
-
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
-
-// app.use(express.static("public"));
-
-// require("./routes/html-routes.js")(app);
-// require("./routes/author-api-routes.js")(app);
-// require("./routes/post-api-routes.js")(app);
-
-// db.sequelize.sync({ force: false }).then(function () {
-//   app.listen(PORT, function () {
-//     console.log("App listening on PORT " + PORT);
-//   });
-// });
-
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
@@ -37,8 +15,29 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populatedb", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
   useNewUrlParser: true,
+});
+
+db.Workout.create({ name: "Squats" })
+  .then((dbExercise) => {
+    console.log(dbExercise);
+  })
+  .catch(({ message }) => {
+    console.log(message);
+  });
+
+app.post("/sumbit", ({ body }, res) => {
+  db.Exercise.create(body)
+    .then(({ _id }) =>
+      db.Workout.findOneAndUpdate({}, { $push: { notes: _id } }, { new: true })
+    )
+    .then((dbExercise) => {
+      res.json(dbExercise);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
 });
 //=============================================================================
 app.listen(PORT, () => {
