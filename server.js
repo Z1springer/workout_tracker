@@ -25,6 +25,10 @@ app.get("/", (req, res) => {
   res.sendFile("./index.html");
 });
 
+app.get("/workout", (req, res) => {
+  res.sendFile(__dirname + "/public/workout.html");
+});
+
 //SEED DATA==============================================================
 
 const seedExorcises = [
@@ -75,9 +79,11 @@ app.post("/api/workout", ({ body }, res) => {
   db.Workout.create(body)
     .then((createWO) => {
       console.log(createWO);
+      res.json(createWO);
     })
     .catch(({ message }) => {
       console.log(message);
+      res.status(500).json(message);
     });
 });
 
