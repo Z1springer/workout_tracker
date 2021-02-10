@@ -97,7 +97,6 @@ app.post("/submit", (req, res) => {
       }).then((updtWO) => {
         console.log(updtWO);
         res.json(updtWO);
-        // res.render("/"); //FIXME: currently does not work
       });
     })
     .catch((err) => {

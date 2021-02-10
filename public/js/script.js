@@ -29,5 +29,6 @@ $("#exsubmitbtn").on("click", function (event) {
     },
   }).then((data) => {
     console.log(data);
+    location.href = "/";
   });
 });
