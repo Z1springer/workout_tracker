@@ -17,8 +17,9 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
   useNewUrlParser: true,
-  useFindAndModify: false,
   useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
 });
 
 app.get("/", (req, res) => {
@@ -61,7 +62,7 @@ const seedExorcises = [
   },
 ];
 
-// ======================================================================
+// Routes==================================================================
 
 //view workouts
 app.get("/workouts", (req, res) => {
@@ -96,6 +97,7 @@ app.post("/submit", (req, res) => {
       }).then((updtWO) => {
         console.log(updtWO);
         res.json(updtWO);
+        res.redirect("/"); //FIXME:
       });
     })
     .catch((err) => {

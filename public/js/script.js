@@ -2,7 +2,6 @@ $("#submitbtn").on("click", function (event) {
   event.preventDefault();
   $("#woContainer").hide();
   $("#exContainer").show();
-  alert("you cannot see me i am only an illusion");
   $.ajax({
     url: "/api/workout",
     method: "POST",
@@ -15,7 +14,6 @@ $("#submitbtn").on("click", function (event) {
 
 $("#exsubmitbtn").on("click", function (event) {
   event.preventDefault();
-  alert("you cannot see me i am not an illusion");
   $.ajax({
     url: "/submit",
     method: "POST",
