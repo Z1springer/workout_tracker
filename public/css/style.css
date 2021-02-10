@@ -1,48 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 body {
   text-align: center;
-  background-color: cornflowerblue;
+  /* Background by: Tab Atkins Jr. link: http://projects.verou.me/css3patterns/#bricks */
+  background-color: lightgray;
+  background-image: linear-gradient(335deg, #b00 23px, transparent 23px),
+    linear-gradient(155deg, #d00 23px, transparent 23px),
+    linear-gradient(335deg, #b00 23px, transparent 23px),
+    linear-gradient(155deg, #d00 23px, transparent 23px);
+  background-size: 58px 58px;
+  background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+  /* ================================================================================= */
 }
-h1 {
-  font-size: 40px;
-  color: white;
+.stroke-text {
+  font-family: "Fredoka One", cursive;
+  font-size: 70px;
+  -webkit-text-stroke: 3px black;
+  -webkit-text-fill-color: whitesmoke;
 }
-.delete {
-  margin-left: 20px;
-  color: red;
-  cursor: pointer;
-  text-align: right;
+h4 {
+  font-size: 30px;
+  color: black;
 }
 input {
-  width: 400px;
-  height: 50px;
+  width: 200px;
+  height: 25px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 42px;
+  font-size: 21px;
   background-color: antiquewhite;
 }
 textarea {
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 24px;
+  font-size: 18px;
   background-color: antiquewhite;
 }
 .data-title {
   cursor: pointer;
   font-size: 24px;
 }
-#results {
-  width: 400px;
-  height: 200px;
-  overflow: auto;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: antiquewhite;
-}
-#action-button {
-  display: inline-block;
-}
-#buttons {
-  margin: 20px;
+#fitnessbtn {
+  height: 10vh;
+  width: 15vh;
+  margin: 5vh;
+  font-size: 20px;
+  font-family: "Fredoka One", cursive;
 }
