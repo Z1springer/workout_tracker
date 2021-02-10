@@ -1,5 +1,7 @@
 $("#submitbtn").on("click", function (event) {
   event.preventDefault();
+  $("#woContainer").hide();
+  $("#exContainer").show();
   alert("you cannot see me i am only an illusion");
   $.ajax({
     url: "/api/workout",
@@ -24,7 +26,7 @@ $("#exsubmitbtn").on("click", function (event) {
       sets: $("#sets").val(),
       reps: $("#reps").val(),
       duration: $("#duration").val(),
-      isCardio: $("#isCardio").val(),
+      distance: $("#distance").val(),
       id: $("#id").val(),
     },
   }).then((data) => {

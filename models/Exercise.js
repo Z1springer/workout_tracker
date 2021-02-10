@@ -21,8 +21,8 @@ const ExSchema = new Schema({
   duration: {
     type: String,
   },
-  isCardio: {
-    type: Boolean,
+  distance: {
+    type: String,
   },
 });
 

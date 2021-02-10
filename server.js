@@ -39,7 +39,7 @@ const seedExorcises = [
     sets: 5,
     reps: 10,
     duration: "20 min",
-    isCardio: false,
+    distance: "around the corner",
   },
   {
     name: "Mountain Climbers",
@@ -48,7 +48,7 @@ const seedExorcises = [
     sets: 3,
     reps: 20,
     duration: "15 min",
-    isCardio: false,
+    distance: "not far enough",
   },
   {
     name: "Jogging",
@@ -57,7 +57,7 @@ const seedExorcises = [
     sets: "N/A",
     reps: "10 Laps",
     duration: "30 min",
-    isCardio: true,
+    distance: "too far",
   },
 ];
 
