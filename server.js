@@ -97,7 +97,7 @@ app.post("/submit", (req, res) => {
       }).then((updtWO) => {
         console.log(updtWO);
         res.json(updtWO);
-        res.redirect("/"); //FIXME:
+        res.redirect("/"); //FIXME: currently does not work
       });
     })
     .catch((err) => {
