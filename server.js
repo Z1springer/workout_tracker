@@ -22,14 +22,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
   useFindAndModify: false,
 });
 
-app.get("/", (req, res) => {
-  res.sendFile("./index.html");
-});
-
-app.get("/workout", (req, res) => {
-  res.sendFile(__dirname + "/public/workout.html");
-});
-
 //SEED DATA==============================================================
 
 const seedExorcises = [
@@ -63,6 +55,14 @@ const seedExorcises = [
 ];
 
 // Routes==================================================================
+//front page
+app.get("/", (req, res) => {
+  res.sendFile("./index.html");
+});
+//create page
+app.get("/workout", (req, res) => {
+  res.sendFile(__dirname + "/public/workout.html");
+});
 
 //view workouts
 app.get("/workouts", (req, res) => {
@@ -97,7 +97,7 @@ app.post("/submit", (req, res) => {
       }).then((updtWO) => {
         console.log(updtWO);
         res.json(updtWO);
-        res.redirect("/"); //FIXME: currently does not work
+        // res.render("/"); //FIXME: currently does not work
       });
     })
     .catch((err) => {

@@ -15,7 +15,7 @@
       <br />
       <button id="submitbtn">Submit</button>
     </div>
-    <div id="exContainer" style="display: none">
+    <div id="exContainer" style="display: none" action="POST">
       <h3>A Name for such a worthy cause!</h3>
       <input type="text" id="exname" placeholder="Exercise Name..." />
       <br />
@@ -38,7 +38,12 @@
       <input type="text" id="distance" placeholder="How far for Cardio?" />
       <input type="hidden" id="id" />
       <br />
-      <button id="exsubmitbtn">Submit</button>
+      <a>
+        <button id="exsubmitbtn">Submit</button>
+      </a>
+      <form action="/index.html">
+        <button id="bekBtn">Back to Homepage</button>
+      </form>
     </div>
 
     <script
