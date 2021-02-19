@@ -2,6 +2,7 @@
 
 body {
   text-align: center;
+  align-items: center;
   padding: 3vh;
   /* Background by: Tab Atkins Jr. link: http://projects.verou.me/css3patterns/#bricks */
   background-color: lightgray;
@@ -12,6 +13,10 @@ body {
   background-size: 58px 58px;
   background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
   /* ================================================================================= */
+}
+
+div {
+  background-color: gray;
 }
 
 .stroke-text {
