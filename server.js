@@ -59,6 +59,7 @@ const seedExorcises = [
 app.get("/", (req, res) => {
   res.sendFile("./index.html");
 });
+
 //create page
 app.get("/workout", (req, res) => {
   res.sendFile(__dirname + "/public/workout.html");
@@ -67,6 +68,7 @@ app.get("/workout", (req, res) => {
 //view workouts
 app.get("/workouts", (req, res) => {
   db.Workout.find({})
+    .populate("exercise")
     .then((viewWO) => {
       res.json(viewWO);
     })
